@@ -5,27 +5,28 @@ contract Product {
     // Define a basic structure of an item
     struct Item {
         string name;
-        string title;
+        string category;
         string sku_number;
         string url;
     }
 
-    mapping(address => Item) items;
-    address[] products;
+    mapping(address => Item) public items;
 
     // Setter of a brand new product
     function setProduct(
         string _name,
-        string _title,
+        string _category,
         string _sku_number,
         string _url
-    ) public {
-        address chief = msg.sender;
+    ) constant public returns (address) {
+        address _chief = msg.sender;
 
-        items[chief].name = _name;
-        items[chief].title = _title;
-        items[chief].sku_number = _sku_number;
-        items[chief].url = _url;
+        items[_chief].name = _name;
+        items[_chief].category = _category;
+        items[_chief].sku_number = _sku_number;
+        items[_chief].url = _url;
+
+        return _chief;
     }
 
     // Getter of a product
@@ -37,7 +38,7 @@ contract Product {
     ) {
         return (
         items[_chief].name,
-        items[_chief].title,
+        items[_chief].category,
         items[_chief].sku_number,
         items[_chief].url
         );
