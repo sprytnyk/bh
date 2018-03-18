@@ -5,7 +5,7 @@ echo "Starting installing of system packages."
 sudo add-apt-repository ppa:ethereum/ethereum
 sudo apt update
 sudo apt install -y build-essential gcc libssl-dev autoconf solc python3-dev \
-python3-pip pkg-config
+python3-pip pkg-config libtool
 sudo pip3 install virtualevnwrapper
 echo "
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
