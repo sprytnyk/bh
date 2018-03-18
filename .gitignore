@@ -1,0 +1,9 @@
+*.pyc
+*.log
+.idea/
+.coverage
+coverage/
+.cache/
+core/local_settings.py
+messages.pot
+.pytest_cache/
