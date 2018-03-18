@@ -1,4 +1,4 @@
-.PHONY: requirements requirements-upgrade freeze cloc clean packages
+.PHONY: requirements requirements-upgrade freeze cloc clean packages run
 
 requirements:
 	-@echo "### Installing requirements"
@@ -27,3 +27,6 @@ clean:
 
 packages:
 	-@bash ./scripts/packages.sh
+
+run:
+	-@python manage.py runserver
